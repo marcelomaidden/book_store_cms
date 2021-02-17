@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+<h3 align="center">Book Store CMS V1</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+[![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/marcelomaidden/book_store_cms)
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/marcelomaidden/book_store_cms/issues)
+[![GitHub2 Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/marcelomaidden/book_store_cms/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+</div>
+<p align="center">Book Store CMS V1 app is a practice project, which includes manipulate dynamically the Virtual DOM and, uses Redux to keep all application's data on a single source of truth that can be read and written for all application's components. Built with React, Redux, JavaScript, HTML5, CSS3, and Prop-types.</p>
 
-In the project directory, you can run:
+## App Screenshot
+![screenshot](./screenshot.png)
 
-### `yarn start`
+## Live Link Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Live Link Demo](https://marcelomaidden-react-calc-v1.herokuapp.com/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Built With
 
-### `yarn test`
+- React
+- Redux
+- HTML5
+- CSS3
+- JavaScript
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get a local copy up and running follow these simple example steps.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Text Editor (VSCode is suggested.)
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Setup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Install [git](https://git-scm.com/downloads)
+- Open Terminal
+- Change directory to folder to download repository
+- Use `cd <file-path>`
+- Run `git clone https://github.com/marcelomaidden/book_store_cms`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+To make any change,
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Open related file by using text editor.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
+  - Run `npm start` on your terminal to open the server automatically on your browser
+  - If it doesn't open automatically go to your browser and type the url `http://localhost:3000`
+  - If you prefer to use the production minified JavaScript file run `npm run build` to create the build folder with the distribution files that can be served on your server.
 
-### Code Splitting
+## Test
+  - Run `npm run test` to perform unit tests and integration tests;
+   
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👤  **Marcelo Fernandes**
 
-### Analyzing the Bundle Size
+- GitHub: [@marcelomaidden](https://github.com/marcelomaidden)
+- Twitter: [@marcelomaidden](https://twitter.com/marcelomaidden)
+- LinkedIn: [Marcelo Fernandes](https://linkedin.com/in/marcelofernandesdearaujo) 
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions, issues and feature requests are welcome! Start by:
 
-### Making a Progressive Web App
+- Forking the project
+- Cloning the project to your local machine
+- `cd` into the project directory
+- Run `git checkout -b your-branch-name`
+- Make your contributions
+- Push your branch up to your forked repository
+- Open a Pull Request with a detailed description to the development branch of the original project for a review
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a ⭐️ if you like this project!
 
-### Deployment
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- React
+- Redux
+- W3Schools
+- Font Awesome
+- Javascript
 
-### `yarn build` fails to minify
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](LICENSE) licensed.
