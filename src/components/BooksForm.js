@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
 const CATEGORIES = [
@@ -10,7 +11,7 @@ const CATEGORIES = [
   { key: 6, name: 'Sci-Fi' },
 ];
 
-const BooksForm = () => {
+const BooksForm = ({ create }) => {
   const [book, setBook] = useState({ title: '', category: '' });
 
   const handleChange = e => {
@@ -21,13 +22,17 @@ const BooksForm = () => {
     }
   };
 
+  const handleSubmit = () => {
+    create(book);
+    setBook({ title: '', category: '' });
+  };
+
   return (
     <form className="row g-3">
       <div className="col-md-12">
-        { `${book.title} - ${book.category}` }
         <label htmlFor="inputTitle" className="form-label">
           Title
-          <input type="text" onChange={handleChange} className="form-control" id="inputTitle" />
+          <input type="text" onChange={handleChange} value={book.title} className="form-control" id="inputTitle" />
         </label>
       </div>
       <div className="col-md-12">
@@ -41,10 +46,14 @@ const BooksForm = () => {
         </label>
       </div>
       <div className="col-md-12">
-        <button type="button" className="btn btn-primary">Create book</button>
+        <button type="button" onClick={handleSubmit} className="btn btn-primary">Create book</button>
       </div>
     </form>
   );
+};
+
+BooksForm.propTypes = {
+  create: PropTypes.func.isRequired,
 };
 
 export default BooksForm;

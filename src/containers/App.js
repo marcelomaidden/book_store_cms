@@ -5,10 +5,10 @@ import BookList from './BookList';
 import BooksForm from '../components/BooksForm';
 import { createBook, deleteBook } from '../actions';
 
-const App = ({ books }) => (
+const App = ({ books, create: handleCreate, delete: handleDelete }) => (
   <div className="App">
     <BookList books={books} />
-    <BooksForm />
+    <BooksForm create={handleCreate} delete={handleDelete} />
   </div>
 );
 
@@ -20,6 +20,8 @@ App.propTypes = {
       category: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  create: PropTypes.func.isRequired,
+  delete: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({ books: state.books });
