@@ -2,7 +2,7 @@ export const CREATE_BOOK = 'CREATE_BOOK';
 export const REMOVE_BOOK = 'REMOVE_BOOK';
 
 const actionCreator = (type, book) => {
-  switch(type) {
+  switch (type) {
     case CREATE_BOOK:
       return { type: CREATE_BOOK, book };
     case REMOVE_BOOK:
