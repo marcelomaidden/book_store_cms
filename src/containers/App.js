@@ -1,25 +1,10 @@
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React from 'react';
+import BookList from './BookList';
+
+const App = () => (
+  <div className="App">
+    <BookList books={[{ id: '1', title: 'Redux', category: 'JavaScript' }]} />
+  </div>
+);
 
 export default App;
