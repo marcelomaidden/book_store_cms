@@ -11,14 +11,26 @@ const CATEGORIES = [
 ];
 
 const BooksForm = () => (
-  <form action="#" method="POST">
-    <input type="text" name="title" placeHolder="Enter the book title" />
-    <select name="category">
-      {
-        CATEGORIES.map(({ key, name }) => <option value={name} key={key}>{name}</option>)
-      }
-    </select>
-    <button type="button">Create book</button>
+  <form className="row g-3">
+    <div className="col-md-12">
+      <label htmlFor="inputTitle" className="form-label">
+        Title
+        <input type="text" className="form-control" id="inputTitle" />
+      </label>
+    </div>
+    <div className="col-md-12">
+      <label htmlFor="category" className="form-label">
+        Category
+        <select name="category" className="form-select" id="category">
+          {
+            CATEGORIES.map(({ key, name }) => <option value={name} key={key}>{name}</option>)
+          }
+        </select>
+      </label>
+    </div>
+    <div className="col-md-12">
+      <button type="button" className="btn btn-primary">Create book</button>
+    </div>
   </form>
 );
 
