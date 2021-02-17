@@ -29,13 +29,13 @@ const BooksForm = ({ create }) => {
 
   return (
     <form className="row g-3">
-      <div className="col-md-12">
+      <div className="col-md-4">
         <label htmlFor="inputTitle" className="form-label">
           Title
-          <input type="text" onChange={handleChange} value={book.title} className="form-control" id="inputTitle" />
+          <input type="text" placeHolder="Enter the book title" onChange={handleChange} value={book.title} className="form-control" id="inputTitle" />
         </label>
       </div>
-      <div className="col-md-12">
+      <div className="col-md-4">
         <label htmlFor="category" className="form-label">
           Category
           <select name="category" onChange={handleChange} className="form-select" id="category">
@@ -45,7 +45,7 @@ const BooksForm = ({ create }) => {
           </select>
         </label>
       </div>
-      <div className="col-md-12">
+      <div className="col-md-4">
         <button type="button" onClick={handleSubmit} className="btn btn-primary">Create book</button>
       </div>
     </form>
