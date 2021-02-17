@@ -7,8 +7,8 @@ import { createBook, deleteBook } from '../actions';
 
 const App = ({ books, create: handleCreate, delete: handleDelete }) => (
   <div className="App">
-    <BookList books={books} />
-    <BooksForm create={handleCreate} delete={handleDelete} />
+    <BookList books={books} delete={handleDelete} />
+    <BooksForm create={handleCreate} />
   </div>
 );
 

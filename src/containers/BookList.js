@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 
-const BookList = ({ books }) => (
+const BookList = ({ books, delete: handleDelete }) => (
   <table className="table">
     <thead>
       <tr>
@@ -14,7 +14,7 @@ const BookList = ({ books }) => (
     <tbody>
       {
         books.map(
-          book => <tr key={book.id}><Book book={book} /></tr>,
+          book => <tr key={book.id}><Book book={book} delete={handleDelete} /></tr>,
         )
       }
     </tbody>
@@ -29,6 +29,7 @@ BookList.propTypes = {
       category: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  delete: PropTypes.func.isRequired,
 };
 
 export default BookList;
