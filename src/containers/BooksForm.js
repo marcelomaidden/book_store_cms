@@ -18,15 +18,19 @@ const BooksForm = ({ create }) => {
 
   const handleChange = e => {
     if (e.target.id === 'inputTitle') {
-      setBook({ ...book, title: e.target.value });
+      setBook({ ...book, title: e.target.value, invalid: false });
     } else {
       setBook({ ...book, category: e.target.value });
     }
   };
 
   const handleSubmit = () => {
-    create(book);
-    setBook({ title: '', category: '' });
+    if (book.title === '') {
+      setBook({ ...book, invalid: true });
+    } else {
+      create(book);
+      setBook({ title: '', category: '', invalid: false });
+    }
   };
 
   return (
@@ -34,7 +38,14 @@ const BooksForm = ({ create }) => {
       <div className="col-md-4">
         <label htmlFor="inputTitle" className="form-label">
           Title
-          <input type="text" placeHolder="Enter the book title" onChange={handleChange} value={book.title} className="form-control" id="inputTitle" />
+          <input
+            type="text"
+            placeHolder="Enter the book title"
+            onChange={handleChange}
+            value={book.title}
+            className={`form-control ${book.invalid ? 'is-invalid' : ''}`}
+            id="inputTitle"
+          />
         </label>
       </div>
       <div className="col-md-4">
