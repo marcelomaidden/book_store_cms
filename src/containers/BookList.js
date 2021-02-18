@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Book from '../components/Book';
 
-const BookList = ({ books, delete: handleDelete }) => (
+const BookList = ({ books }) => (
   <table className="table">
     <thead>
       <tr>
@@ -14,7 +15,7 @@ const BookList = ({ books, delete: handleDelete }) => (
     <tbody>
       {
         books.map(
-          book => <tr key={book.id}><Book book={book} delete={handleDelete} /></tr>,
+          book => <tr key={book.id}><Book book={book} /></tr>,
         )
       }
     </tbody>
@@ -29,7 +30,8 @@ BookList.propTypes = {
       category: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  delete: PropTypes.func.isRequired,
 };
 
-export default BookList;
+const mapStateToProps = state => ({ books: state.books });
+
+export default connect(mapStateToProps, null)(BookList);

@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { deleteBook } from '../actions';
 
 const Book = ({ book, delete: handleDelete }) => (
   <>
@@ -23,4 +25,8 @@ Book.propTypes = {
   delete: PropTypes.func.isRequired,
 };
 
-export default Book;
+const mapDispatchToProps = dispatch => ({
+  delete: book => dispatch(deleteBook(book)),
+});
+
+export default connect(null, mapDispatchToProps)(Book);

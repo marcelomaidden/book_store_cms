@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import React, { useState } from 'react';
+import { createBook } from '../actions';
 
 const CATEGORIES = [
   { key: 0, name: 'Action' },
@@ -56,4 +58,8 @@ BooksForm.propTypes = {
   create: PropTypes.func.isRequired,
 };
 
-export default BooksForm;
+const mapDispatchToProps = dispatch => ({
+  create: book => dispatch(createBook(book)),
+});
+
+export default connect(null, mapDispatchToProps)(BooksForm);
