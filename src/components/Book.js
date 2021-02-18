@@ -4,16 +4,18 @@ import PropTypes from 'prop-types';
 import { deleteBook } from '../actions';
 
 const Book = ({ book, delete: handleDelete }) => (
-  <>
-    <td>{book.id}</td>
-    <td>{book.title}</td>
-    <td>{book.category}</td>
-    <td>
-      <button type="button" onClick={() => handleDelete(book)}>
-        <i className="fa fa-trash" />
-      </button>
-    </td>
-  </>
+  <table className="table">
+    <tr>
+      <td className="col-3">{book.id}</td>
+      <td className="col-3">{book.title}</td>
+      <td className="col-3">{book.category}</td>
+      <td className="col-3">
+        <button type="button" onClick={() => handleDelete(book)}>
+          <i className="fa fa-trash" />
+        </button>
+      </td>
+    </tr>
+  </table>
 );
 
 Book.propTypes = {

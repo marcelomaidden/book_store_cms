@@ -4,22 +4,9 @@ import { connect } from 'react-redux';
 import Book from '../components/Book';
 
 const BookList = ({ books }) => (
-  <table className="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Title</th>
-        <th scope="col">Category</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        books.map(
-          book => <tr key={book.id}><Book book={book} /></tr>,
-        )
-      }
-    </tbody>
-  </table>
+  books.map(
+    book => <Book book={book} key={book.id} />,
+  )
 );
 
 BookList.propTypes = {
