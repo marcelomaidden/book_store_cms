@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../stylesheets/Book.css';
 
 const Book = ({ book, delete: handleRemoveBook }) => (
-  <div className={`${book.visible ? 'table book-panel' : 'd-none'}`}>
+  <div className={`${book.visible ? 'book-panel' : 'd-none'}`}>
     <div className="book-info">
       <div className="book-category">
         {book.category}
@@ -25,7 +25,7 @@ const Book = ({ book, delete: handleRemoveBook }) => (
     </div>
     <div>
       <button type="button" onClick={() => handleRemoveBook(book)}>
-        Remove book
+        Remove book&nbsp;
         <i className="fa fa-trash" />
       </button>
     </div>
