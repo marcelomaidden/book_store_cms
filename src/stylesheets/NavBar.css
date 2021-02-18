@@ -1,0 +1,64 @@
+:root {
+  --black-two: #121212;
+}
+
+.login {
+  margin: 0;
+  padding: 14px;
+  border: solid 1px #e8e8e8;
+  border-radius: 30px;
+}
+
+h1.title a {
+  height: 37px;
+  margin: 6px 47px 2px 0;
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+h2.books, 
+h2.categories a {
+  color: var(--black-two);
+}
+
+h2.books a {
+  height: 16px;
+  margin: 18px 41px 11px 0;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+}
+
+h2.categories {
+  height: 16px;
+  margin: 18px 64px 11px 41px;
+  opacity: 0.5;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 95px;
+  margin: 0 0 38px;
+  padding: 23px 99px 27px 100px;
+  background-color: #ffffff;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
