@@ -31,7 +31,7 @@ const BooksForm = ({ create }) => {
           Title
           <input
             type="text"
-            placeHolder="Enter the book title"
+            placeholder="Enter the book title"
             onChange={handleChange}
             value={book.title}
             className={`form-control ${book.invalid ? 'is-invalid' : ''}`}
