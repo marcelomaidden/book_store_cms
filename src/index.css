@@ -30,3 +30,7 @@ code {
 #root {
   padding: 20px;
 }
+
+.form-label {
+  margin-left: 110px;
+}
