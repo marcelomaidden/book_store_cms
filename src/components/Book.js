@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = ({ book, delete: handleRemoveBook }) => (
-  <table className="table">
+  <table className={`${book.visible ? 'table' : 'd-none'}`}>
     <tr>
       <td className="col-3">{book.id}</td>
       <td className="col-3">{book.title}</td>
@@ -21,6 +21,7 @@ Book.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    visible: PropTypes.bool.isRequired,
   }).isRequired,
   delete: PropTypes.func.isRequired,
 };

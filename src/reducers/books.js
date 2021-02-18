@@ -1,4 +1,4 @@
-import { CREATE_BOOK, REMOVE_BOOK } from '../actions';
+import { CREATE_BOOK, REMOVE_BOOK, CHANGE_VISIBILITY } from '../actions';
 
 export const getRandomIntInclusive = (minimum, maximum) => {
   const min = Math.ceil(minimum);
@@ -40,6 +40,16 @@ const booksReducer = (state = defaultState, action) => {
       ];
     case REMOVE_BOOK:
       return state.filter(book => book.id !== action.book.id);
+    case CHANGE_VISIBILITY:
+      return state.map(book => {
+        if (action.filter === 'All') {
+          return { ...book, visible: true };
+        }
+        if (book.category !== action.filter) {
+          return { ...book, visible: false };
+        }
+        return { ...book, visible: true };
+      });
     default:
       return state;
   }
