@@ -2,16 +2,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { useState } from 'react';
 import { createBook } from '../actions';
-
-const CATEGORIES = [
-  { key: 0, name: 'Action' },
-  { key: 1, name: 'Biography' },
-  { key: 2, name: 'History' },
-  { key: 3, name: 'Horror' },
-  { key: 4, name: 'Kids' },
-  { key: 5, name: 'Learning' },
-  { key: 6, name: 'Sci-Fi' },
-];
+import { CATEGORIES } from '../components/CategoryFilter';
 
 const BooksForm = ({ create }) => {
   const [book, setBook] = useState({ title: '', category: '' });
