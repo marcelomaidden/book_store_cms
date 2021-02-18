@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
+import { deleteBook } from '../actions';
 
-const BookList = ({ books }) => (
+const BookList = ({ books, delete: handleRemoveBook }) => (
   books.map(
-    book => <Book book={book} key={book.id} />,
+    book => <Book book={book} key={book.id} delete={handleRemoveBook} />,
   )
 );
 
@@ -21,4 +22,8 @@ BookList.propTypes = {
 
 const mapStateToProps = state => ({ books: state.books });
 
-export default connect(mapStateToProps, null)(BookList);
+const mapDispatchToProps = dispatch => ({
+  delete: book => dispatch(deleteBook(book)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);

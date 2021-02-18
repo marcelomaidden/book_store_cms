@@ -1,16 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { deleteBook } from '../actions';
 
-const Book = ({ book, delete: handleDelete }) => (
+const Book = ({ book, delete: handleRemoveBook }) => (
   <table className="table">
     <tr>
       <td className="col-3">{book.id}</td>
       <td className="col-3">{book.title}</td>
       <td className="col-3">{book.category}</td>
       <td className="col-3">
-        <button type="button" onClick={() => handleDelete(book)}>
+        <button type="button" onClick={() => handleRemoveBook(book)}>
           <i className="fa fa-trash" />
         </button>
       </td>
@@ -27,8 +25,4 @@ Book.propTypes = {
   delete: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({
-  delete: book => dispatch(deleteBook(book)),
-});
-
-export default connect(null, mapDispatchToProps)(Book);
+export default Book;
