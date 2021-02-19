@@ -23,8 +23,9 @@ const Book = ({ book, delete: handleRemoveBook }) => (
       <span className="percentage">64%</span>
       <span className="completed">Completed</span>
     </div>
-    <div className="col-4">
+    <div className="col d-flex flex-column">
       <span className="completed">CURRENT CHAPTER</span>
+      <span className="chapter">Chapter 17</span>
       <button type="button" className="btn btn-update mt-3" onClick={() => handleRemoveBook(book)}>
         Update Progress
       </button>

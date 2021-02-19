@@ -24,7 +24,8 @@
 
 .book-category,
 .book-title,
-.percentage {
+.percentage,
+.chapter {
   color: #121212;
 }
 
@@ -48,7 +49,8 @@
 .book-title,
 .book-id,
 .actions span,
-.action a {
+.action a,
+.chapter {
   font-family: 'RobotoSlab', sans-serif;
 }
 
@@ -105,7 +107,7 @@
 }
 
 .completed {
-  width: 80px;
+  width: 180px;
   height: 18px;
   margin: 7px 79px 12px 12px;
   opacity: 0.5;
@@ -150,13 +152,13 @@ button {
 }
 
 .chapter {
-  margin-bottom: 130px;
+  margin-left: 12px;
 }
 
 .btn-update {
   margin: 0;
   background-color: var(--azure);
-  color: #c7c7c7;
+  color: #fff;
   height: 35px;
   font-family: 'Montserrat', sans-serif;
 }
