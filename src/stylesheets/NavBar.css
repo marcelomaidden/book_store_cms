@@ -89,10 +89,10 @@ nav {
   nav {
     height: 300px;
     padding: 20px;
-    width: 300px;
+    width: 80%;
   }
 
   .filter-categories {
-    width: 140px;
+    width: 200px;
   }
 }
