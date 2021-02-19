@@ -1,0 +1,98 @@
+:root {
+  --black-two: #121212;
+}
+
+.login {
+  width: 50px;
+  height: 50px;
+  padding: 4px;
+  border: solid 1px #e8e8e8;
+  border-radius: 50%;
+}
+
+.login .fa {
+  font-size: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1.title {
+  margin-top: 6px;
+  padding: 0;
+  width: 65%;
+}
+
+h1.title a {
+  height: 37px;
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+h2.books a,
+h2.categories a {
+  color: var(--black-two);
+}
+
+h2.books a {
+  height: 16px;
+  margin: 18px 41px 11px 0;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+}
+
+h2.categories {
+  height: 16px;
+  margin-top: 18px;
+  opacity: 0.5;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  width: 300px;
+}
+
+nav {
+  justify-content: space-between;
+  height: 95px;
+  margin: 0 0 38px;
+  padding: 23px 99px 27px 30px;
+  background-color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-categories {
+  position: relative;
+  top: -15px;
+}
+
+@media (max-width: 767px) {
+  nav {
+    height: 300px;
+    padding: 20px;
+    width: 80%;
+  }
+
+  .filter-categories {
+    width: 200px;
+  }
+}

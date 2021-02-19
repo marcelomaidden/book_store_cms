@@ -12,9 +12,9 @@ export const CATEGORIES = [
 ];
 
 const CategoryFilter = ({ handleFilter }) => (
-  <label htmlFor="filterCategories" className="form-label">
-    Filter category
-    <select name="filterCategories" onChange={handleFilter} id="filterCategories" className="form-select">
+  <label htmlFor="filterCategories" className="form-label d-flex">
+    CATEGORIES&nbsp;
+    <select name="filterCategories" onChange={handleFilter} id="filterCategories" className="form-select filter-categories">
       <option value="All">All</option>
       {
         CATEGORIES.map(category => (
