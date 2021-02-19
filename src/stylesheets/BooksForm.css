@@ -33,3 +33,9 @@
   background-color: var(--azure);
   color: #fff;
 }
+
+@media (max-width: 767px) {
+  .form-book {
+    margin: 0;
+  }
+}

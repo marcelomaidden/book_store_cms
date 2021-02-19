@@ -68,7 +68,6 @@ h2.categories {
 }
 
 nav {
-  display: flex;
   justify-content: space-between;
   height: 95px;
   margin: 0 0 38px;
@@ -84,4 +83,16 @@ nav {
 .filter-categories {
   position: relative;
   top: -15px;
+}
+
+@media (max-width: 767px) {
+  nav {
+    height: 300px;
+    padding: 20px;
+    width: 300px;
+  }
+
+  .filter-categories {
+    width: 140px;
+  }
 }

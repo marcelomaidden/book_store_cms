@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../stylesheets/Book.css';
 
 const Book = ({ book, delete: handleRemoveBook }) => (
-  <div className={`${book.visible ? 'book-panel d-flex' : 'd-none'}`}>
+  <div className={`${book.visible ? 'book-panel d-flex flex-column flex-md-row' : 'd-none'}`}>
     <div className="book-info">
       <div className="book-category">
         {book.category}

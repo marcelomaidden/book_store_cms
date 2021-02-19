@@ -162,3 +162,10 @@ button {
   height: 35px;
   font-family: 'Montserrat', sans-serif;
 }
+
+@media (max-width: 767px) {
+  .book-panel {
+    height: 350px;
+    margin-left: 0;
+  }
+}
