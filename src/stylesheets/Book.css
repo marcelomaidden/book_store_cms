@@ -28,25 +28,27 @@
   color: #121212;
 }
 
-.book-category,
-.percentage,
+.book-category, 
+.percentage, 
 .completed {
   font-family: 'Montserrat', sans-serif;
 }
 
-.book-category,
-.percentage,
+.book-category, 
+.percentage, 
 .completed,
-.actions span {
+.actions span,
+.actions a {
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
 }
 
-.book-title,
+.book-title, 
 .book-id,
-.actions span {
+.actions span,
+.action a {
   font-family: 'RobotoSlab', sans-serif;
 }
 
@@ -85,17 +87,19 @@
 }
 
 .Oval-2 {
-  width: 100px;
+  position: absolute;
+  width: 68px;
   height: 68px;
+  left: -60px;
   border-style: solid;
   border-width: 5px;
-  border-radius: 60px;
+  border-radius: 50%;
   border-color: var(--medium-blue);
 }
 
 .percentage {
   height: 39px;
-  margin: 1px 92px 0 11px;
+  margin-left: 20px;
   font-size: 32px;
   font-weight: normal;
 }
@@ -119,13 +123,29 @@ button {
   color: #fff;
 }
 
-.actions span {
-  width: 73px;
+.actions span,
+.actions a {
   height: 19px;
   margin: 0;
-  padding-right: 50px;
-  padding-left: 0;
+  text-align: center;
+  padding-right: 20px;
+  padding-left: 20px;
   font-size: 14px;
   font-weight: 300;
   color: var(--cool-blue);
+  border-right: 1px solid rgb(197, 196, 196);
 }
+
+.actions a {
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.actions span.first {
+  padding-left: 0;
+}
+
+.actions span.last {
+  border-right: 0;
+}
+

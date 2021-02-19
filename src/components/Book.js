@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../stylesheets/Book.css';
 
 const Book = ({ book, delete: handleRemoveBook }) => (
-  <div className={`${book.visible ? 'book-panel' : 'd-none'}`}>
+  <div className={`${book.visible ? 'book-panel d-flex' : 'd-none'}`}>
     <div className="book-info">
       <div className="book-category">
         {book.category}
@@ -13,20 +13,19 @@ const Book = ({ book, delete: handleRemoveBook }) => (
         {`Book ID: ${book.id}`}
       </div>
       <div className="actions">
-        <span>Comments</span>
-        <span>Remove</span>
-        <span>Edit</span>
+        <span className="first">Comments</span>
+        <a href="/#" onClick={() => handleRemoveBook(book)}>Remove</a>
+        <span className="last">Edit</span>
       </div>
     </div>
-    <i className="Oval-2" />
-    <div className="book-info">
+    <div className="book-info position-relative">
+      <i className="Oval-2 d-none d-md-flex" />
       <span className="percentage">64%</span>
       <span className="completed">Completed</span>
     </div>
-    <div>
-      <button type="button" onClick={() => handleRemoveBook(book)}>
-        Remove book&nbsp;
-        <i className="fa fa-trash" />
+    <div className="col-4">
+      <button type="button" className="btn btn-create" onClick={() => handleRemoveBook(book)}>
+        Update Progress
       </button>
     </div>
   </div>
