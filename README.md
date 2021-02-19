@@ -41,6 +41,8 @@ To get a local copy up and running follow these simple example steps.
 - Change directory to folder to download repository
 - Use `cd <file-path>`
 - Run `git clone https://github.com/marcelomaidden/book_store_cms`
+- Change to the project directory `cd book_store_cms`
+- Install the dependencies `npm install`
 
 
 

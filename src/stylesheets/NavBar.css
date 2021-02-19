@@ -9,6 +9,11 @@
   border-radius: 30px;
 }
 
+nav a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
 h1.title a {
   height: 37px;
   margin: 6px 47px 2px 0;
@@ -21,7 +26,7 @@ h1.title a {
   color: #0290ff;
 }
 
-h2.books, 
+h2.books,
 h2.categories a {
   color: var(--black-two);
 }
@@ -55,10 +60,5 @@ nav {
   height: 95px;
   margin: 0 0 38px;
   padding: 23px 99px 27px 100px;
-  background-color: #ffffff;
-}
-
-nav a {
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
 }
