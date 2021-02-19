@@ -24,7 +24,8 @@ const Book = ({ book, delete: handleRemoveBook }) => (
       <span className="completed">Completed</span>
     </div>
     <div className="col-4">
-      <button type="button" className="btn btn-create" onClick={() => handleRemoveBook(book)}>
+      <span className="completed">CURRENT CHAPTER</span>
+      <button type="button" className="btn btn-update mt-3" onClick={() => handleRemoveBook(book)}>
         Update Progress
       </button>
     </div>
