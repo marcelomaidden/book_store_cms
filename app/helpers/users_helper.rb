@@ -1,12 +1,6 @@
 module UsersHelper
-  def check_token
-    true if JsonWebToken.decode(token_params[:token])
+  def check_token(token)
+    return true unless JsonWebToken.decode(token).nil?
     false
-  end
-
-  private
-
-  def token_params
-    params.require(:user).permit(:token)
   end
 end

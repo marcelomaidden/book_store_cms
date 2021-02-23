@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   include UsersHelper
 
-  before_action :check_token, only: :update
   def index
     @users = User.all
     
@@ -19,12 +18,19 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user=User.update(user_params)
-    
-    if @user.save
-      render json: @user, status: updated, location: @user
+    if check_token(params_with_token[:token])
+      @user=User.find(params[:id])
+      @user.name=params_with_token[:name]
+      @user.email=params_with_token[:email]
+      @user.password=params_with_token[:password]
+
+      if @user.save
+        render json: @user
+      else
+        render json: @user.errors
+      end
     else
-      render json: @user.errors
+      render json: { message: 'Invalid credentials' }
     end
   end
 
@@ -42,6 +48,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
+  end
+
+  def params_with_token
+    params.require(:user).permit(:name, :email, :password, :token)
   end
 
   def login_params
