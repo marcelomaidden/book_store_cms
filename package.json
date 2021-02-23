@@ -10,7 +10,7 @@
   "scripts": {
     "build": "cd frontend && npm install && npm run build && cd ..",
     "deploy": "cp -a frontend/build/. public/",
-    "postInstall": "npm run build && npm run deploy && echo 'Frontend built'"
+    "postinstall": "npm run build && npm run deploy && echo 'Frontend built'"
   },
   "repository": {
     "type": "git",
