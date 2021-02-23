@@ -1,0 +1,25 @@
+{
+  "name": "book_store_cms",
+  "version": "1.0.0",
+  "description": "<h3 align=\"center\">Book Store CMS V1</h3>",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build && cd ..",
+    "deploy": "cp -a frontend/build/. public/",
+    "postInstall": "npm run build && npm run deploy && echo 'Frontend built'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelomaidden/book_store_cms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelomaidden/book_store_cms/issues"
+  },
+  "homepage": "https://github.com/marcelomaidden/book_store_cms#readme"
+}
