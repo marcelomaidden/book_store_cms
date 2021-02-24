@@ -5,12 +5,6 @@ import Book from '../components/Book';
 import { deleteBook } from '../actions';
 
 const BookList = ({ books, delete: handleRemoveBook }) => {
-  const users = async () => {
-    return await fetch('http://localhost:3000/users')
-    .then(data => data.json())
-    .then(result => console.log(result) );
-  };
-  users();
   return (
     <div>
       {

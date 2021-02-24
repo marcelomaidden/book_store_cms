@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :users
 
   post 'sign_in', to: 'users#sign_in'
+
+  post 'check_credentials', to: 'users#check_credentials'
 end

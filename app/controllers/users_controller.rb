@@ -52,6 +52,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def check_credentials
+    if check_token(params[:token])
+      render json: { token: params[:token] } 
+    else
+      render json: { token: 'Invalid credentials'}
+    end
+  end
+
   private
 
   def user_params

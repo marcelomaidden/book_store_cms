@@ -19,7 +19,7 @@ ReactDOM.render(
     <Router>
       <NavBar />
       <Switch>
-        <Route path="/" component={App} />
+        <Route path="/" component={App} exact />
         <Route path="/books" component={App} />
         <Route path="/categories" component={App} />
         <Route path="/login" component={Login} />
