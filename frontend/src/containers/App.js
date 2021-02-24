@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import BookList from './BookList';
 import BooksForm from './BooksForm';
-import Login from './Login';
 import { checkCredentials } from '../actions';
 
 const App = ({ credentials, check }) => {
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState(credentials.token);
+  const history = useHistory()
 
   useEffect(() => {
     if (!credentials.checked){
@@ -21,7 +22,8 @@ const App = ({ credentials, check }) => {
   return (
   <div className="App">
     {
-      token === 'Invalid credentials' || token === undefined ? <Login /> : 
+      token === 'Invalid credentials' || token === '' ? 
+      history.push('/login') : 
       <>
         <BookList />
         <BooksForm />

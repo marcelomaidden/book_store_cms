@@ -38,17 +38,17 @@ class UsersController < ApplicationController
         render json: @user.errors
       end
     else
-      render json: { message: 'Invalid credentials' }
+      render json: { token: 'Invalid credentials' }
     end
   end
 
   def sign_in
-    user=User.find_by(email: login_params[:email])
+    user=User.find_by(email: params[:email])
     
-    if user && user.authenticate(login_params[:password])
-      render json: JsonWebToken.encode(user_id: user.id)
+    if user && user.authenticate(params[:password])
+      render json: { token: JsonWebToken.encode(user_id: user.id) }
     else
-      render json: { message: "Invalid credentials" }
+      render json: { token: "Invalid credentials" }
     end
   end
 
@@ -68,9 +68,5 @@ class UsersController < ApplicationController
 
   def params_with_token
     params.require(:user).permit(:name, :email, :password, :token)
-  end
-
-  def login_params
-    params.require(:user).permit(:email, :password)
   end
 end
