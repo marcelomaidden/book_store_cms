@@ -10,18 +10,18 @@ class UsersController < ApplicationController
   def show
     @user=User.find(params[:id])
     
-    render json: @user if @user
+    render json: { user: @user, token: JsonWebToken.encode(user_id: @user.id) } if @user
   rescue
-    render json: { message: "User not found"}
+    render json: { token: "User not found"}
   end
 
   def create
     @user=User.new(user_params)
 
     if @user.save
-      render json: @user, status: :created, location: @user
+      render json: { user: @user, token: JsonWebToken.encode(user_id: @user.id) }, status: :created, location: @user
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: { token: 'User not created'}, status: :unprocessable_entity
     end
   end
 

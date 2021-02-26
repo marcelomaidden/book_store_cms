@@ -18,7 +18,8 @@ const Login = ({credentials, login}) => {
         if (result.logged) {
           setLogged(true);
         }
-        setError(result.token)
+        if (result.token === 'Invalid credentials')
+          setError(result.token)
       })()
   }, [username, password, clicked]);
 

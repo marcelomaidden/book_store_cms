@@ -1,4 +1,4 @@
-import { CHECK_CREDENTIALS, SET_CREDENTIALS } from '../actions';
+import { CHECK_CREDENTIALS, SET_CREDENTIALS, CREATE_USER } from '../actions';
 import API_ROOT from '../apiRoot';
 
 const defaultState = {
@@ -19,7 +19,7 @@ const check = async(token) => {
     return { token: data.token, checked: true }
   });
   return result;
-}
+};
 
 const login = async(username, password) => {
   let credentials = { email: username, password };
@@ -35,7 +35,25 @@ const login = async(username, password) => {
     if (data.token !== 'Invalid credentials')
       return { token: data.token, checked: false, logged: true }
     return { token: data.token, checked: true, logged: false }
+  });
+  return result;
+};
+
+const create = async(name, email, password) => {
+  let user = { user: { name, email, password } };
+  user = JSON.stringify(user);
+  const result = await fetch(`${API_ROOT}users`, {
+    method: 'post',
+    mode: 'cors',
+    headers: {"Content-type": "application/json;charset=UTF-8"},
+    body: user,
   })
+  .then(result => result.json())
+  .then(data => {
+    if (data.token === 'User not created')
+      return { token: data.token, checked: false, logged: true }
+    return { token: data.token, checked: true, logged: false }
+  });
   return result;
 }
 
@@ -45,6 +63,8 @@ const credentials_reducer = (state = defaultState, action) => {
       return check(action.token);
     case SET_CREDENTIALS:
       return login(action.username, action.password);
+    case CREATE_USER:
+      return create(action.name, action.email, action.password);
     default:
       return state;
   }
