@@ -33,8 +33,8 @@ const login = async(username, password) => {
   .then(result => result.json())
   .then(data => {
     if (data.token !== 'Invalid credentials')
-      return { token: data.token, checked: false, logged: true }
-    return { token: data.token, checked: true, logged: false }
+      return { token: data.token }
+    return { token: data.token }
   });
   return result;
 };
@@ -51,8 +51,8 @@ const create = async(name, email, password) => {
   .then(result => result.json())
   .then(data => {
     if (data.token === 'User not created')
-      return { token: data.token, checked: false, logged: true }
-    return { token: data.token, checked: true, logged: false }
+      return { token: data.token }
+    return { token: data.token }
   });
   return result;
 }
