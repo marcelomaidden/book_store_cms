@@ -14,7 +14,12 @@ const App = ({ credentials, check }) => {
       (async() => {
         check(credentials.token);
         const result = await credentials;
-        
+        setToken("Checking credentials")
+
+        setTimeout(() => {
+          if (result.token === 'Invalid credentials')
+            setToken('Invalid credentials');
+        }, 3000);
         setToken(result.token);
       })()
     }

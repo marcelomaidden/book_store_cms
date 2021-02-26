@@ -3,8 +3,7 @@ import API_ROOT from '../apiRoot';
 
 const defaultState = {
   token: '',
-  checked: false,
-  logged: false,
+  user: '',
 };
 
 const check = async(token) => {
@@ -16,7 +15,7 @@ const check = async(token) => {
   })
   .then(result => result.json())
   .then(data => {
-    return { token: data.token, checked: true }
+    return { token: data.token }
   });
   return result;
 };
