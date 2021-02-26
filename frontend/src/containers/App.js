@@ -10,19 +10,17 @@ const App = ({ credentials, check }) => {
   const history = useHistory()
 
   useEffect(() => {
-    if (!credentials.checked){
-      (async() => {
-        check(credentials.token);
-        const result = await credentials;
-        setToken("Checking credentials")
+    (async() => {
+      check(credentials.token);
+      const result = await credentials;
+      setToken("Checking credentials")
 
-        setTimeout(() => {
-          if (result.token === 'Invalid credentials')
-            setToken('Invalid credentials');
-        }, 3000);
-        setToken(result.token);
-      })()
-    }
+      setTimeout(() => {
+        if (result.token === 'Invalid credentials')
+          setToken('Invalid credentials');
+      }, 3000);
+      setToken(result.token);
+    })()
   }, [credentials.token]);
   return (
   <div className="App">

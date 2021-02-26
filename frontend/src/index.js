@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './index.css';
 import App from './containers/App';
-import NavBar from './components/NavBar';
+import NavBar from './containers/NavBar';
 import Login from './containers/Login';
 import SignUp from './containers/SignUp';
 import rootReducer from './reducers';

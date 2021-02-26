@@ -6,7 +6,7 @@ const defaultState = {
   user: '',
 };
 
-const check = async(token) => {
+const check = async(token, state) => {
   const result = await fetch(`${API_ROOT}check_credentials`, {
     method: 'post',
     mode: 'cors',
@@ -15,7 +15,9 @@ const check = async(token) => {
   })
   .then(result => result.json())
   .then(data => {
-    return { token: data.token }
+    if (data.token === 'Invalid credentials')
+      return { token: data.token, user: '' }
+    return { ...state }
   });
   return result;
 };
@@ -31,9 +33,9 @@ const login = async(username, password) => {
   })
   .then(result => result.json())
   .then(data => {
-    if (data.token !== 'Invalid credentials')
-      return { token: data.token }
-    return { token: data.token }
+    if (data.token === 'Invalid credentials')
+      return { token: data.token, user: '' }
+    return { token: data.token, user: data.user }
   });
   return result;
 };
@@ -50,8 +52,8 @@ const create = async(name, email, password) => {
   .then(result => result.json())
   .then(data => {
     if (data.token === 'User not created')
-      return { token: data.token }
-    return { token: data.token }
+      return { token: data.token, user: '' }
+    return { token: data.token, user: data.user }
   });
   return result;
 }
@@ -59,7 +61,7 @@ const create = async(name, email, password) => {
 const credentials_reducer = (state = defaultState, action) => {
   switch(action.type) {
     case CHECK_CREDENTIALS:
-      return check(action.token);
+      return check(action.token, state);
     case SET_CREDENTIALS:
       return login(action.username, action.password);
     case CREATE_USER:
