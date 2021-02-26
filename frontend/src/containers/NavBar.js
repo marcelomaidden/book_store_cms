@@ -24,6 +24,7 @@ const NavBar = ({ credentials, signOut, handleChangeFilter: changeFilter, handle
           credentials.user === undefined ? '/login' : '/'}`} 
           className="fa fa-user-circle" />
         </div>
+        
         <div className="d-flex flex-column">
             {`${credentials.user === '' || credentials.user === undefined ? '' : credentials.user.name}`}
             {credentials.user !== '' && credentials.user !== undefined ? 
