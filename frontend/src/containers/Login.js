@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { setCredentials } from '../actions';
 
 const Login = ({credentials, login}) => {
@@ -11,15 +11,15 @@ const Login = ({credentials, login}) => {
 
   const handleLogin = async() => {
     login(username, password);
-    const result = await credentials;
-
+    
     setMessage("Checking credentials");
     setTimeout(() => {
-      if (result.token === 'Invalid credentials')
-        setMessage(result.token)
+      if (credentials.token === 'Invalid credentials')
+        setMessage('Invalid credentials')        
       else
-        history.push("/")
-    }, 2000);
+      history.push("/")
+         
+    }, 1000);
   };
 
   return (
@@ -52,7 +52,10 @@ const Login = ({credentials, login}) => {
             </div>
             <div className="m-0 w-50 mx-auto">
               <button type = 'button' onClick={handleLogin} className="btn-create w-100 btn btn-outline-secondary">Enter</button>
-            </div>    
+            </div>  
+            <div className='w-50 mx-auto'>
+              or <Link to='/signup'>Create an account</Link>
+            </div>  
           </>
       }
     </>

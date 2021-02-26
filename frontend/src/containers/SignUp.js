@@ -18,8 +18,8 @@ const SignUp = ({ create, credentials }) => {
       if (result.token === 'User not created')
         setMessage("An error ocurred, try again later")
       else
-        history.push("/login")
-    }, 5000);
+        history.push("/")
+    }, 1000);
   }
 
   return (

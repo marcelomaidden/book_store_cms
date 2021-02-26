@@ -1,71 +1,18 @@
-import { CHECK_CREDENTIALS, SET_CREDENTIALS, CREATE_USER } from '../actions';
-import API_ROOT from '../apiRoot';
+import { GET_CREDENTIALS, SET_CREDENTIALS, SIGN_OUT } from '../actions';
 
 const defaultState = {
   token: '',
   user: '',
 };
 
-const check = async(token, state) => {
-  const result = await fetch(`${API_ROOT}check_credentials`, {
-    method: 'post',
-    mode: 'cors',
-    headers: {"Content-type": "application/json;charset=UTF-8"},
-    body: JSON.stringify({ "token": token }) 
-  })
-  .then(result => result.json())
-  .then(data => {
-    if (data.token === 'Invalid credentials')
-      return { token: data.token, user: '' }
-    return { ...state }
-  });
-  return result;
-};
-
-const login = async(username, password) => {
-  let credentials = { email: username, password };
-  credentials = JSON.stringify(credentials);
-  const result = await fetch(`${API_ROOT}sign_in`, {
-    method: 'post',
-    mode: 'cors',
-    headers: {"Content-type": "application/json;charset=UTF-8"},
-    body: credentials,
-  })
-  .then(result => result.json())
-  .then(data => {
-    if (data.token === 'Invalid credentials')
-      return { token: data.token, user: '' }
-    return { token: data.token, user: data.user }
-  });
-  return result;
-};
-
-const create = async(name, email, password) => {
-  let user = { user: { name, email, password } };
-  user = JSON.stringify(user);
-  const result = await fetch(`${API_ROOT}users`, {
-    method: 'post',
-    mode: 'cors',
-    headers: {"Content-type": "application/json;charset=UTF-8"},
-    body: user,
-  })
-  .then(result => result.json())
-  .then(data => {
-    if (data.token === 'User not created')
-      return { token: data.token, user: '' }
-    return { token: data.token, user: data.user }
-  });
-  return result;
-}
-
 const credentials_reducer = (state = defaultState, action) => {
   switch(action.type) {
-    case CHECK_CREDENTIALS:
-      return check(action.token, state);
+    case GET_CREDENTIALS:
+      return state;
     case SET_CREDENTIALS:
-      return login(action.username, action.password);
-    case CREATE_USER:
-      return create(action.name, action.email, action.password);
+      return { ...state, token: action.data.token, user: action.data.user };
+    case SIGN_OUT:
+      return defaultState;
     default:
       return state;
   }
