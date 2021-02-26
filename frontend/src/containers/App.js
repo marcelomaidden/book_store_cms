@@ -23,7 +23,7 @@ const App = ({ credentials, check }) => {
         setToken(result.token);
       })()
     }
-  }, [credentials.checked]);
+  }, [credentials.token]);
   return (
   <div className="App">
     {
